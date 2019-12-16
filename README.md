@@ -241,3 +241,5 @@ List of vim plugins I like to use:
 * [supertab](github.com/ervandew/supertab) configure <tab> behaviour
 * [YouCompleteMe](github.com/ycm-core/YouCompleteMe) code completion engine
 * [psf/black](github.com/psf/black) vim plugin for python formatting
+
+[Awesome list](https://vimawesome.com/) of vim plugins.
