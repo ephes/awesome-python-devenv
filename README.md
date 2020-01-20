@@ -1,6 +1,8 @@
 # Python Development Environment 2020 Edition [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-Just a collection of tips and tools to improve your python development experience
+Just a collection of tips and tools to improve your python development
+experience inspired by
+[this blogpost](https://jacobian.org/2019/nov/11/python-environment-2020/).
 
 Since the escape key is back, it's now possible to use macbooks as development
 machines again. So I got one and had to redo my python development setup. After
