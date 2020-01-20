@@ -167,3 +167,20 @@ List of vim plugins I like to use:
 * [psf/black](github.com/psf/black) vim plugin for python formatting
 
 [Awesome list](https://vimawesome.com/) of vim plugins.
+
+# Useful Command Line Tools
+* [bat](https://github.com/sharkdp/bat)
+* [tree](http://mama.indstate.edu/users/ice/tree/)
+* [ripgrep](https://github.com/BurntSushi/ripgrep)
+* [fd](https://github.com/sharkdp/fd)
+* [fzf](https://github.com/junegunn/fzf)
+* git-flow brew install git-flow
+* [wget](https://www.gnu.org/software/wget/)
+* [tldr](https://github.com/tldr-pages/tldr-cpp-client)
+* [asciinema](https://asciinema.org/)
+* [multitail](https://www.vanheusden.com/multitail/)
+* [ntop](https://www.ntop.org/products/traffic-analysis/ntop/) (brew install ntopng)
+* slurm brew install slurm
+* [gitversion](https://github.com/GitTools/GitVersion)
+* [gource](https://gource.io/)
+* 
