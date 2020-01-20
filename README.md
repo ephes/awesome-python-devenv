@@ -185,3 +185,4 @@ List of vim plugins I like to use:
 * [gource](https://gource.io/)
 * [pandoc](https://pandoc.org/)
 * [tmux](https://github.com/tmux/tmux/wiki)
+* [neofetch](https://github.com/dylanaraps/neofetch)
