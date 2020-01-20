@@ -184,3 +184,4 @@ List of vim plugins I like to use:
 * [gitversion](https://github.com/GitTools/GitVersion)
 * [gource](https://gource.io/)
 * [pandoc](https://pandoc.org/)
+* [tmux](https://github.com/tmux/tmux/wiki)
