@@ -183,4 +183,4 @@ List of vim plugins I like to use:
 * slurm brew install slurm
 * [gitversion](https://github.com/GitTools/GitVersion)
 * [gource](https://gource.io/)
-* 
+* [pandoc](https://pandoc.org/)
