@@ -24,6 +24,8 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 ## Terminal / Shell
 
+[Link auf iTerm](iterm.md)
+
 The default macOS terminal is not as bad as it used to be, but I still like to
 use [iTerm2](https://iterm2.com/). I
 used [bash](https://www.gnu.org/software/bash/) as shell for a long time but
