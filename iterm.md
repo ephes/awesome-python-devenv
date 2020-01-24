@@ -6,6 +6,7 @@ is pretty neat.
 
 ### Features
 
+* Open/Search for shells (Cmd-Shift-O)
 * Navigate marks (Cmd-Shift-Up,Down)
 * Notify about long running tasks (Cmd-Opt-a)
 * Copy files from and to hosts via scp (right click)
