@@ -24,7 +24,7 @@ The default macOS terminal is not as bad as it used to be, but I still like to
 use [iTerm2](iterm.md). I
 used [bash](https://www.gnu.org/software/bash/) as shell for a long time but
 got adventurous in the past few years and went from
-using [zsh](www.zsh.org/) to [fish](https://fishshell.com/):
+using [zsh](https://www.zsh.org/) to [fish](https://fishshell.com/):
 
 ```shell
 $ brew install fish

@@ -20,10 +20,10 @@ the bait. So here we are :).
 Installing python on macOS (or any other OS I know of) is much more difficult
 than you would expect. After using a mixture of system provided python, python
 installed by homebrew and python installed by conda I finally settled
-using [pyenv](github.com/pyenv/pyenv). With pyenv it's easy to install a lot of
+using [pyenv](https://github.com/pyenv/pyenv). With pyenv it's easy to install a lot of
 different python versions. After that you are able to define which python
 version should be used per directory. Even things like pypy or miniconda are
-possible. Together with [pyenv-virtualenv](github.com/pyenv/pyenv-virtualenv) I
+possible. Together with [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) I
 use it for my data science conda environments and my web development
 virtualenvs. Environments are automatically switched by entering the respective
 project directory:
@@ -159,12 +159,12 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 List of vim plugins I like to use:
 
-* [fugitive.vim](github.com/tpope/vim-fugitive) interacting with git from vim
-* [jedi-vim](github.com/davidhalter/jedi-vim) autocompletion and code navigation
-* [Command-T](github.com/wincent/command-t) fuzzy search/open files from vim
-* [supertab](github.com/ervandew/supertab) configure <tab> behaviour
-* [YouCompleteMe](github.com/ycm-core/YouCompleteMe) code completion engine
-* [psf/black](github.com/psf/black) vim plugin for python formatting
+* [fugitive.vim](https://github.com/tpope/vim-fugitive) interacting with git from vim
+* [jedi-vim](https://github.com/davidhalter/jedi-vim) autocompletion and code navigation
+* [Command-T](https://github.com/wincent/command-t) fuzzy search/open files from vim
+* [supertab](https://github.com/ervandew/supertab) configure <tab> behaviour
+* [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) code completion engine
+* [psf/black](https://github.com/psf/black) vim plugin for python formatting
 
 [Awesome list](https://vimawesome.com/) of vim plugins.
 
