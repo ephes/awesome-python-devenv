@@ -190,6 +190,33 @@ $ cd projects/project_dir
 $ conda env list             # right environment should be activated
 ```
 
+# Using fzf
+
+[fzf](https://github.com/junegunn/fzf) is a really great tool, and the
+most enjoyed recent addition to my toolbelt.
+
+Install it with:
+
+```shell
+$ brew install fzf
+/opt/fzf/install  # install useful key bindings and fuzzy completion
+```
+
+You can put some helpful environment variables in ~/.config/fish/config.fish:
+```shell
+# fzf
+set -gx FZF_DEFAULT_COMMAND "fd --type f"
+set -gx FZF_DEFAULT_OPTS "-layout=reverse --inline-info"
+```
+
+Here are some examples on how to use it:
+
+```shell
+$ vim (fzf)  # search for file and open in vim
+$ history | fzf +s --tac  # search in history in reverse order and dont sort result
+```
+
+
 # Fixing Vim
 
 Use homebrew to install vim:
@@ -198,7 +225,7 @@ Use homebrew to install vim:
 $ brew install vim
 ```
 
-### Install Vundle
+## Install Vundle
 
 ```shell
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
