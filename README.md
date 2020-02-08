@@ -214,6 +214,7 @@ Here are some examples on how to use it:
 ```shell
 $ vim (fzf)  # search for file and open in vim
 $ history | fzf +s --tac  # search in history in reverse order and dont sort result
+$ fzf --preview 'bat --style=numbers --color=always {} | head -500'  # use fzf with bat preview
 ```
 
 
