@@ -19,7 +19,11 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 ```
 
 ## Terminal / Shell
+### Terminal
 
+[iTerm2](iterm.md) got it's onw page now.
+
+### Shell
 The default macOS terminal is not as bad as it used to be, but I still like to
 use [iTerm2](iterm.md). I
 used [bash](https://www.gnu.org/software/bash/) as shell for a long time but
