@@ -29,6 +29,7 @@ brew install \
     wget \
     tldr \
     tmux \
+    fish \
     slurm \
     gource \
     pandoc \
@@ -45,7 +46,7 @@ brew install \
 ## Terminal / Shell
 ### Terminal
 
-[iTerm2](iterm.md) got it's onw page now.
+iTerm2 got it's [onw page](iterm.md) now.
 
 ### Shell
 The default macOS terminal is not as bad as it used to be, but I still like to
