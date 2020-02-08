@@ -217,6 +217,12 @@ $ history | fzf +s --tac  # search in history in reverse order and dont sort res
 $ fzf --preview 'bat --style=numbers --color=always {} | head -500'  # use fzf with bat preview
 ```
 
+## macOS quirks
+
+On OS X, Alt-c (Option-c) types ç by default. In iTerm2, you can send the right
+escape sequence with Esc-c. If you configure the option key to act as +Esc
+(iTerm2 Preferences > Profiles > Default > Keys > Left option (⌥) acts as: >
++Esc), then alt-c will work for fzf as documented
 
 # Fixing Vim
 
