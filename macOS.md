@@ -64,10 +64,11 @@ $ chsh -s /usr/local/bin/fish
 ```
 
 I like fish quite a lot, but it still feels weird not using bash. Where's my
-beloved ctrl + r for example? With zsh it was the same - tabcompletion just
-felt different. Yes, it probably was better in some cases, but it wasn't the
-same. Also just pressing return is a lot faster in bash than in zsh or fish and
-I don't know why.
+beloved ctrl + r for example (found a [solution using
+fzf](https://github.com/junegunn/fzf#key-bindings-for-command-line)?  With zsh
+it was the same - tabcompletion just felt different. Yes, it probably was
+better in some cases, but it wasn't the same. Also just pressing return is a
+lot faster in bash than in zsh or fish and I don't know why.
 
 ## Fixing Things Broken By Default
 
