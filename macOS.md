@@ -18,6 +18,30 @@ usually do is to install [homebrew](https://brew.sh).
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+### Things I usually install via Homebrew
+
+```shell
+brew install \
+    fd \
+    fzf \
+    bat \
+    tree \
+    wget \
+    tldr \
+    tmux \
+    slurm \
+    gource \
+    pandoc \
+    ntopng \
+    ripgrep \
+    postgres \
+    git-flow \
+    neofetch \
+    asciinema \
+    multitail \
+    gitversion
+```
+
 ## Terminal / Shell
 ### Terminal
 
