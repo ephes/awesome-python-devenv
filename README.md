@@ -47,15 +47,17 @@ installed a powerline patched font. You can install one line this:
 
 ```shell
 $ omf install fonts
-$ fonts install --powerline RobotoMono
+$ fonts install --powerline Inconsolata
 ```
 
-Maybe you have to change your font setting for your iTerm profile, too.
+Maybe you have to restart iTerm and change your font setting for your iTerm profile, too.
 
 ## Config
 
+To start the web based fish configuration call:
+
 ```shell
-$ fish-config
+$ fish_config
 ```
 
 # Python
