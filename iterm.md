@@ -13,3 +13,8 @@ is pretty neat.
 * Command History (Shift-Cmd-; or Shift-Cmd-B)
 * Recent directories (Cmd-Opt-/)
 
+## Session Restore
+
+If it does not work, here are the reasons:
+
+[No Content Restored](https://iterm2.com/why_no_content.html)
