@@ -111,7 +111,9 @@ $ brew install xz pyenv pyenv-virtualenv
 There should be something like this in .config/fish/config.fish:
 
 ```shell
-    # pyenv virtualenvs
+    # pyenv / pyenv-virtualenv
+    set -gx PYENV_ROOT $HOME/.pyenv
+    set -gx PATH $PYENV_ROOT/bin $PATH
     status --is-interactive; and source (pyenv init -|psub)
     status --is-interactive; and source (pyenv virtualenv-init -|psub)
 ```
