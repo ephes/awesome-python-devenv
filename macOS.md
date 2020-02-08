@@ -30,6 +30,7 @@ brew install \
     tldr \
     tmux \
     fish \
+    pyenv \
     slurm \
     gource \
     pandoc \
@@ -40,7 +41,8 @@ brew install \
     neofetch \
     asciinema \
     multitail \
-    gitversion
+    gitversion \
+    pyenv-virtualenv
 ```
 
 ## Terminal / Shell
