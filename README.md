@@ -17,7 +17,24 @@ the bait. So here we are :).
 
 The macOS specific stuff has a [page on it's own](macOS.md).
 
-## Python
+# Shell
+
+## Package Manager
+
+Using a package manager for your shell makes things a lot easier. You
+can get [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) by typing:
+
+```shell
+$ curl -L https://get.oh-my.fish | fish
+```
+
+## Config
+
+```shell
+$ fish-config
+```
+
+# Python
 
 Installing python on macOS (or any other OS I know of) is much more difficult
 than you would expect. After using a mixture of system provided python, python
@@ -44,9 +61,9 @@ There should be something like this in .config/fish/config.fish:
     status --is-interactive; and source (pyenv virtualenv-init -|psub)
 ```
 
-## Getting A Django Project Up And Running
+# Getting A Django Project Up And Running
 
-### Database
+## Database
 
 At first you also have to install postgres via homebrew:
 
@@ -77,7 +94,7 @@ this function:
 $ init_django_db username dbname
 ```
 
-### Environment Variables
+## Environment Variables
 
 There are usually a lot of environment variables that need to be set for each
 project. I usually keep them in an .env file in the root project directory. Now
@@ -100,7 +117,7 @@ but I'm also
 using [python-dotenv](https://github.com/theskumar/python-dotenv) and need to
 resolve some compatibility issues first.
 
-### Virtualenv
+## Virtualenv
 
 You should now be able to just clone one of your old django projects from
 github for example, create a new virtualenv and install the requirements:
@@ -120,7 +137,7 @@ $ ./manage.py migrate
 $ ./manage.py runserver 0.0.0.0:8000
 ```
 
-## Getting A Data Science Project Up And Running
+# Getting A Data Science Project Up And Running
 
 To activate a conda environment automatically on entering a directory
 containing an environment.yml file, I use a small function
@@ -147,7 +164,7 @@ $ cd projects/project_dir
 $ conda env list             # right environment should be activated
 ```
 
-## Fixing Vim
+# Fixing Vim
 
 Use homebrew to install vim:
 
