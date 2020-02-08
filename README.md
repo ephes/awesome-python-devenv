@@ -13,7 +13,9 @@ Because I clearly have no clue what I'm doing and just asking for help wouldn't
 be as effective as posting the wrong answer and waiting for a poor soul to take
 the bait. So here we are :).
 
-# [macOS Stuff](macOS.md)
+# macOS
+
+The macOS specific stuff has a [page on it's own](macOS.md).
 
 ## Python
 
