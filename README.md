@@ -28,6 +28,30 @@ can get [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) by typing:
 $ curl -L https://get.oh-my.fish | fish
 ```
 
+Update your packages and install one:
+
+```shell
+$ omf update
+$ omf install bobthefish
+```
+
+Use a theme from [this list](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md)
+of available themes.
+
+```shell
+$ omf theme bobthefish
+```
+
+If you see strange character appearing in your prompt, you probably have to
+installed a powerline patched font. You can install one line this:
+
+```shell
+$ omf install fonts
+$ fonts install --powerline RobotoMono
+```
+
+Maybe you have to change your font setting for your iTerm profile, too.
+
 ## Config
 
 ```shell
