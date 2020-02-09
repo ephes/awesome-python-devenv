@@ -87,6 +87,20 @@ There should be something like this in .config/fish/config.fish:
     status --is-interactive; and source (pyenv virtualenv-init -|psub)
 ```
 
+Use a recent python version as system python:
+
+```shell
+$ pyenv global 3.8.1
+```
+
+## Using poetry for packages and dependency management
+
+Install poetry:
+
+```shell
+$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+```
+
 # Getting A Django Project Up And Running
 
 ## Database
@@ -149,7 +163,7 @@ You should now be able to just clone one of your old django projects from
 github for example, create a new virtualenv and install the requirements:
 
 ```shell
-$ pyenv virtualenv 3.8.0 venv_name
+$ pyenv virtualenv 3.8.1 venv_name
 $ cd projects/project_name
 $ pyenv local venv_name    # store the name of the venv you like to use for this dir in .python-version
 $ pyenv virtualenvs        # check the right virtualenv is activated on entering project directory
