@@ -101,6 +101,13 @@ Install poetry:
 $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 ```
 
+If you used pyenv to create your virtualenv, you have to activate it.
+Otherwise poetry will create an own virtualenv on poetry install.
+
+```shell
+$ pyenv activate your_env
+```
+
 # Getting A Django Project Up And Running
 
 ## Database
