@@ -73,6 +73,10 @@ use it for my data science conda environments and my web development
 virtualenvs. Environments are automatically switched by entering the respective
 project directory:
 
+When installing miniconda3-latest, make sure PYTHON_CONFIGURE_OPTS="--enable-framework"
+is not set (you might need this for some vim plugins etc.) otherwise miniconda installation
+will fail.
+
 ```shell
 $ brew install xz pyenv pyenv-virtualenv
 ```
