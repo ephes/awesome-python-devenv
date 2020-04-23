@@ -98,6 +98,7 @@ brew install \
     asciinema \
     multitail \
     gitversion \
+    pyenv-which-ext \
     pyenv-virtualenv
 ```
 

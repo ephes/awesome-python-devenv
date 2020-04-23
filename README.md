@@ -97,6 +97,10 @@ Use a recent python version as system python:
 $ pyenv global 3.9.0
 ```
 
+### Caveats
+
+* pyenv shims are masking system commands (ffmpeg/ffprobe for me) - I found [pyenv-which-ext](get_rendition_or_not_found) helpful
+
 ## Using poetry for packages and dependency management
 
 Install poetry:
