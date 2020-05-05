@@ -270,7 +270,7 @@ List of vim plugins I like to use:
 * [Command-T](https://github.com/wincent/command-t) fuzzy search/open files from vim
 * [supertab](https://github.com/ervandew/supertab) configure <tab> behaviour
 * [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) code completion engine
-* [psf/black](https://github.com/psf/black) vim plugin for python formatting
+* [psf/black](https://github.com/psf/black) vim plugin for python formatting :BlackUpgrade to update
 
 [Awesome list](https://vimawesome.com/) of vim plugins.
 
