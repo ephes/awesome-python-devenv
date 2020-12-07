@@ -51,6 +51,11 @@ brew install \
     pyenv-virtualenv
 ```
 
+Prefix brew with `arch -x86_64` for M1 macs:
+```shell
+arch -x86_64 brew install fd
+```
+
 ## Terminal / Shell
 ### Terminal
 
