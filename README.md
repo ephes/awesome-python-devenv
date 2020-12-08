@@ -94,7 +94,7 @@ There should be something like this in .config/fish/config.fish:
 Use a recent python version as system python:
 
 ```shell
-$ pyenv global 3.8.1
+$ pyenv global 3.9.0
 ```
 
 ## Using poetry for packages and dependency management
@@ -102,7 +102,7 @@ $ pyenv global 3.8.1
 Install poetry:
 
 ```shell
-$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
 ```
 
 If you used pyenv to create your virtualenv, you have to activate it.
