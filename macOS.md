@@ -18,12 +18,54 @@ usually do is to install [homebrew](https://brew.sh).
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-For M1 Macs use rosetta2:
-```shell
-softwareupdate --install-rosetta
-arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+### Using brew bundle
+
+To install the list of packages I usually use, I created a Brewfile with following contents:
+```
+Using homebrew/bundle
+Using homebrew/core
+Using asciinema
+Using bat
+Using chezmoi
+Using duf
+Using exa
+Using fd
+Using ffmpeg
+Using fish
+Using fzf
+Using git-delta
+Using gource
+Using hexyl
+Using htop
+Using multitail
+Using most
+Using neofetch
+Using node
+Using ntopng
+Using openssl@3
+Using pandoc
+Using pwgen
+Using pyenv
+Using ripgrep
+Using sloccount
+Using slurm
+Using tig
+Using tldr
+Using tmux
+Using tree
+Using vim
+Using wget
 ```
 
+Then I install those packages calling `brew bundle` being in the same directory as the Brewfile:
+```shell
+brew bundle
+```
+
+If you want to dump your installed packackes into a Brewfile use:
+```shell
+brew bundle dump
+```
 ### Things I usually install via Homebrew
 
 ```shell
