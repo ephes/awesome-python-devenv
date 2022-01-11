@@ -18,6 +18,10 @@ usually do is to install [homebrew](https://brew.sh).
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+### Using [chezmoi](https://github.com/twpayne/chezmoi) to Install Packages
+
+[Placeholder howto](https://www.chezmoi.io/docs/how-to/#use-chezmoi-on-macos)
+
 ### Using brew bundle
 
 To install the list of packages I usually use, I created a Brewfile with following contents:
