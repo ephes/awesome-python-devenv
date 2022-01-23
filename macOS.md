@@ -9,6 +9,10 @@ Because I clearly have no clue what I'm doing and just asking for help wouldn't
 be as effective as posting the wrong answer and waiting for a poor soul to take
 the bait. So here we are :).
 
+## Shortcuts
+
+* Emoji keyboard: ⌘+^+Space
+
 ## Installing Software / Package Management
 
 Since there's no builtin package manager in macOS, one of the first things I
