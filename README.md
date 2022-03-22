@@ -80,7 +80,7 @@ $ pyenv install new.version.number
 Uninstall virtualfish
 ```shell
 $ vf uninstall
-$ pipx uninstall vf
+$ pipx uninstall virtualfish
 ```
 
 Use new python version:
