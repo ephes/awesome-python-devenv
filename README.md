@@ -62,6 +62,44 @@ $ fish_config
 
 # Python
 
+## Update Python
+
+Make sure pyenv is up to date:
+
+```shell
+$ cd ~/.pyenv
+$ git pull
+```
+
+Install new python version:
+
+```shell
+$ pyenv install new.version.number
+```
+
+Uninstall virtualfish
+```shell
+$ vf uninstall
+$ pipx uninstall vf
+```
+
+Use new python version:
+```shell
+$ pyenv global new.version.number
+```
+
+Upgrade pipx
+```shell
+$ pipx upgrade-all
+```
+
+Install virtualfish
+```shell
+$ pipx install virtualfish
+$ vf install compat_aliases projects environment auto_activation
+```
+
+## Outdated Stuff
 Installing python on macOS (or any other OS I know of) is much more difficult
 than you would expect. After using a mixture of system provided python, python
 installed by homebrew and python installed by conda I finally settled
