@@ -34,7 +34,7 @@ Nothing yet :).
 
 # Podcasts
 
-- [TalkPython['Podcast'](https://talkpython.fm/)
+- [TalkPython['Podcast']](https://talkpython.fm/)
 - [Python Bytes](https://pythonbytes.fm/)
 - [Podcast.__init__](https://www.pythonpodcast.com/)
 - [Django Chat](https://www.pythonpodcast.com/)
