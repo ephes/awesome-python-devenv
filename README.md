@@ -93,6 +93,11 @@ Upgrade pipx
 $ pipx upgrade-all
 ```
 
+Maybe reinstall all if some interpreters are missing.
+```shell
+$ pipx reinstall-all
+```
+
 Install virtualfish
 ```shell
 $ pipx install virtualfish
