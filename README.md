@@ -71,6 +71,12 @@ $ cd ~/.pyenv
 $ git pull
 ```
 
+Install pipx:
+
+```shell
+$ python -m pip install --user pipx
+```
+
 Install new python version:
 
 ```shell
