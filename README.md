@@ -93,6 +93,12 @@ Use new python version:
 $ pyenv global new.version.number
 ```
 
+Uninstall the old python version since virtualfish has the tendency to create virtualenvs with an old python version by default even if it's
+running a newer version:
+```shell
+$ pyenv uninstall old.version.number
+```
+
 Install pipx
 ```shell
 PIP_REQUIRE_VIRTUALENV="false" python -m pip install --user pipx
