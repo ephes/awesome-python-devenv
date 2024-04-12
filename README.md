@@ -71,27 +71,31 @@ $ cd ~/.pyenv
 $ git pull
 ```
 
-Install pipx:
-
-```shell
-$ python -m pip install --user pipx
-```
-
-Install new python version:
-
-```shell
-$ pyenv install new.version.number
-```
-
 Uninstall virtualfish
 ```shell
 $ vf uninstall
 $ pipx uninstall virtualfish
 ```
 
+Uninstall pipx:
+
+```shell
+$ PIP_REQUIRE_VIRTUALENV="false" python -m pip uninstall pipx
+```
+
+Install new python version:
+```shell
+$ pyenv install new.version.number
+```
+
 Use new python version:
 ```shell
 $ pyenv global new.version.number
+```
+
+Install pipx
+```shell
+PIP_REQUIRE_VIRTUALENV="false" python -m pip install --user pipx
 ```
 
 Upgrade pipx
