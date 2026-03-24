@@ -1,7 +1,8 @@
-fish_config erklären
-django init function welches file
-spaces reordern ausschalten (mission control)
-oh my fish erklären
-poetry installieren
-tox fehlt noch komplett
-
+modern django database setup section
+modern data science setup section for uv-based workflow
+decide whether tox still belongs in the workflow
+decide whether EDITOR should be nvim in fish config
+align nvim python host version with current uv baseline
+decide whether dot_vimrc should stay as a fallback or be removed
+update README title/year
+review orphaned legacy files: fish.md, pyCharm.md, vscode.md, sources.md
