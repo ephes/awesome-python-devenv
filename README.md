@@ -1,4 +1,4 @@
-# Python Development Environment 2022 Edition [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# Python Development Environment [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 Just a collection of tips and tools to improve your python development
 experience inspired by
@@ -118,3 +118,8 @@ Current Brewfile `brew` packages:
 - `wget`, `whisper-cpp`
 - `yq`, `yt-dlp`
 - `zellij`, `zoxide`
+
+# Sources
+
+Further books, podcasts, newsletters, and videos live on a
+[page of their own](sources.md).
