@@ -121,10 +121,10 @@ Install editors and ensure their configuration comes from your managed dotfiles.
 
 Why: editor setup should follow the machine bootstrap so config and plugins land in the expected place.
 
-Planned detail page: `docs/editors.md`
+Details: [editors.md](editors.md)
 
 ## 15. Verify with a real project
 
-Open an existing project, confirm shell configuration loads, confirm Python works, and confirm container tooling works where needed.
+Open an existing project, confirm shell configuration loads, confirm editors open the project cleanly, confirm Python works, and confirm container tooling works where needed.
 
 Why: the setup is only complete when a real project starts cleanly.
