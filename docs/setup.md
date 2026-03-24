@@ -113,7 +113,7 @@ Install and verify your container runtime and related tooling.
 
 Why: container tooling is part of the standard new-Mac workflow for this setup.
 
-Planned detail page: `docs/containers.md`
+Details: [containers.md](containers.md)
 
 ## 14. Bring up editors
 
