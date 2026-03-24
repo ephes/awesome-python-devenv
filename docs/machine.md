@@ -79,6 +79,30 @@ This keeps desktop order stable, which makes keyboard and window-management work
 
 These kinds of changes do not need to wait for SSH, Homebrew, or `chezmoi`. If a default setting makes the machine actively unpleasant to use, change it early.
 
+## Rename the machine early
+
+Set the machine name before getting too far into setup so the intended name shows up consistently in macOS sharing, shell prompts, and hostname-based workflows.
+
+Use the same value for the three macOS names unless you have a specific reason to split them:
+
+```sh
+sudo scutil --set ComputerName <machine-name>
+sudo scutil --set LocalHostName <machine-name>
+sudo scutil --set HostName <machine-name>
+```
+
+Then verify:
+
+```sh
+scutil --get ComputerName
+scutil --get LocalHostName
+scutil --get HostName
+```
+
+`ComputerName` is the user-facing name shown in places like AirDrop and Sharing settings. `LocalHostName` is the Bonjour name used on the local network. `HostName` is the system hostname used by shells and some network tooling.
+
+Using one stable short name keeps prompts, SSH, and machine-to-machine references predictable.
+
 ## Install Xcode Command Line Tools before Homebrew
 
 Install Apple's command line developer tools first:
