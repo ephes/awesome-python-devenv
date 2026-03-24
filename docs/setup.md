@@ -103,7 +103,7 @@ Install and verify the Python development stack.
 
 Why: this enables project work after the machine-level tools are ready.
 
-Planned detail page: `docs/python.md`
+Details: [python.md](python.md)
 
 ## 13. Bring up container tooling
 
