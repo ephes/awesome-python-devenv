@@ -33,6 +33,7 @@ The core ones for this machine are:
 - `fd` for fast file discovery
 - `rg` for fast content search
 - `bat` for readable file previews
+- `btop` for interactive system and process inspection
 - `eza` for directory listings
 - `just` for human-friendly project task entry points
 
@@ -107,6 +108,20 @@ Use them where they make terminal output easier to scan, but keep scripts and
 shared commands conservative when plain `cat` or `ls` is the more portable
 choice.
 
+## Use btop for interactive system inspection
+
+`btop` is the preferred full-screen system monitor in this setup.
+
+Use it when you want a quick interactive view of CPU load, memory usage, and
+the current process list without dropping into Activity Monitor or stitching
+together several shell commands.
+
+For process inspection, `btop` is usually the first thing to open when the
+machine feels slow or a runaway process needs to be identified.
+
+For the current keybindings and sort controls, use `h` inside `btop` to open
+the built-in help instead of relying on stale notes here.
+
 ## Use just as the project command surface
 
 `just` belongs in this page because it is part of the everyday CLI workflow,
@@ -149,6 +164,7 @@ command -v zoxide
 command -v fzf
 command -v fd
 command -v rg
+command -v btop
 command -v just
 ```
 
