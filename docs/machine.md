@@ -25,6 +25,17 @@ defaults write -g KeyRepeat -int 1
 
 This usually requires logging out and back in to fully take effect.
 
+### Input Sources shortcuts
+
+If tmux uses `Ctrl+Space` as its prefix, disable the macOS Input Sources shortcuts that capture `Ctrl+Space` before the terminal sees it.
+
+This is a manual setting in System Settings under Keyboard / Keyboard Shortcuts / Input Sources:
+
+- disable `Select the previous input source`
+- disable `Select next source in Input menu`
+
+Why: with the default macOS shortcuts still enabled, `Ctrl+Space` may never reach Ghostty, Kitty, or tmux, which makes the tmux prefix appear broken.
+
 ### Dock behavior
 
 The Dock should move to the right, auto-hide, and use a bit of magnification:

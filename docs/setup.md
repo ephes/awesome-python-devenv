@@ -14,6 +14,8 @@ Why: it reduces avoidable installer and compatibility problems later in the setu
 
 Apply the macOS settings that immediately reduce friction, starting with keyboard repeat rate, Dock behavior, wallpaper, iCloud sync preferences, and Space behavior.
 
+If tmux uses `Ctrl+Space` as its prefix, disable the macOS Input Sources shortcuts early as part of this step so the prefix reaches the terminal.
+
 Why: some defaults are annoying enough that they make the rest of the setup harder than it needs to be.
 
 Details: [machine.md](machine.md#apply-essential-macos-settings-early)
