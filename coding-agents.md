@@ -3,6 +3,10 @@
 This page is a small reference list for the coding agents currently in use on
 this machine.
 
+## Repositories
+
+- [ephes/agent-stuff](https://github.com/ephes/agent-stuff)
+
 ## Shared
 
 These are useful regardless of which agent is currently doing the work:
