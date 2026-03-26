@@ -40,6 +40,7 @@ On the machine that is `~/.Brewfile`; in the `chezmoi` source it is
 
 # Other Pages
 
+- [coding-agents.md](coding-agents.md) for coding-agent links and references
 - [nvim.md](nvim.md) for Neovim / LazyVim keybindings and usage notes
 - [docs/cli-tools.md](docs/cli-tools.md) for the curated CLI tool overview
 - [vibe-coding.md](vibe-coding.md) for remote development with tmux or zellij

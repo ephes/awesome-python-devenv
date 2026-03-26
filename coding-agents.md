@@ -1,0 +1,21 @@
+# Coding Agents
+
+This page is a small reference list for the coding agents currently in use on
+this machine.
+
+## Shared
+
+These are useful regardless of which agent is currently doing the work:
+
+- [obra/superpowers](https://github.com/obra/superpowers)
+
+## Claude Code
+
+- [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)
+
+## Codex
+
+## Pi
+
+- [nicobailon/pi-subagents](https://github.com/nicobailon/pi-subagents)
+- [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff)
