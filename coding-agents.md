@@ -12,6 +12,7 @@ this machine.
 These are useful regardless of which agent is currently doing the work:
 
 - [obra/superpowers](https://github.com/obra/superpowers)
+- [Agent Skills Specification](https://agentskills.io/specification) for a shared skill format and interoperability ideas across coding agents
 
 ## Claude Code
 
