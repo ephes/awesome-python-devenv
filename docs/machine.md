@@ -215,6 +215,34 @@ brew bundle --global
 
 This step needs to happen before switching the login shell, because tools like `fish` must exist before they can become the default shell.
 
+### Remove packages no longer present in the Brewfile
+
+If packages were previously installed with Homebrew but have since been removed
+from the managed global Brewfile, prune them explicitly instead of assuming
+`brew bundle --global` will uninstall them.
+
+First preview what would be removed:
+
+```sh
+brew bundle cleanup --global
+```
+
+Then perform the cleanup:
+
+```sh
+brew bundle cleanup --global --force
+```
+
+If you prefer a single install-and-prune step during machine maintenance, use:
+
+```sh
+brew bundle install --global --cleanup
+```
+
+Be careful with cleanup on machines that also have intentionally unmanaged
+packages installed via Homebrew, because `brew bundle cleanup` removes anything
+not present in the Brewfile for the selected scope.
+
 ### Manual installs not covered by Homebrew
 
 Some apps still need manual installation from their official sites:
