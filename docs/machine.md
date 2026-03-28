@@ -257,6 +257,7 @@ Some apps still need manual installation from their official sites:
 - [Paprika Recipe Manager](https://www.paprikaapp.com/)
 - [REAPER](https://www.reaper.fm/download-old.php?ver=6x)
 - [Ultraschall](https://ultraschall.fm/)
+- [OpenAI Codex](https://developers.openai.com/codex/app)
 
 `Paprika Recipe Manager` remains a manual install because it is not currently available via Homebrew. `REAPER` is kept as a manual install here because this setup needs version `6.83` from the old-version download page instead of the current Homebrew cask version. `Ultraschall` also remains a manual install.
 
