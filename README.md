@@ -38,6 +38,15 @@ The CLI inventory also lives in the managed Brewfile rather than in this file.
 On the machine that is `~/.Brewfile`; in the `chezmoi` source it is
 `dot_Brewfile`.
 
+# Documentation Checks
+
+Run `python3 -B -m unittest discover -s tests -v` with Python 3.10+ and a POSIX
+`sh`; GitHub Actions runs the same checks. The bootstrap tests execute the
+documented Homebrew shell setup and encrypted/unencrypted chezmoi command order
+with synthetic tools, a restricted PATH and an isolated temporary home. They
+also check local links and anchors in the README and the two bootstrap pages.
+They never run installers, real decryption, or a real `chezmoi apply`.
+
 # Other Pages
 
 - [coding-agents.md](coding-agents.md) for coding-agent links and references

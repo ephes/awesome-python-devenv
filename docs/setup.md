@@ -44,6 +44,10 @@ Details: [machine.md](machine.md#install-xcode-command-line-tools-before-homebre
 
 Install Homebrew after the command line tools are in place.
 
+Follow the installer's printed shell setup instructions to load `brew shellenv`
+into the current bootstrap shell, then verify `command -v brew` and `brew --version`
+before continuing. Persistent shell configuration comes from `chezmoi` later.
+
 Why: Homebrew is the package bootstrap for the rest of the machine setup.
 
 Details: [machine.md](machine.md#install-homebrew)
@@ -58,11 +62,21 @@ Details: [machine.md](machine.md#set-up-ssh-access-before-chezmoi)
 
 ## 7. Install chezmoi and apply dotfiles
 
-Install `chezmoi`, initialize your dotfiles repo, and apply the managed configuration as early as possible.
+Install `chezmoi`, then choose the path before initializing your dotfiles repo:
+
+- **Without encrypted files or decryption prerequisites:** run
+  `chezmoi init --apply <your-dotfiles-repo>` to initialize and apply, then
+  continue to step 8.
+- **With SOPS-encrypted files:** run `chezmoi init <your-dotfiles-repo>` without
+  `--apply`, then complete the decryption, inspection and apply steps below.
 
 Why: chezmoi is the source of truth for shell, editor, and other machine configuration.
 
-If the dotfiles repo contains encrypted files, configure SOPS decryption before running `chezmoi apply`.
+If the dotfiles repo contains SOPS-encrypted files, install SOPS and the required
+backend tools, provision the machine's authorized identity, and verify decryption
+before continuing. Inspect with `chezmoi diff`, resolve any errors, then run
+`chezmoi apply`. Do not wait for the later Brewfile install to supply decryption
+tools.
 
 Why: encrypted managed files cannot be rendered or applied until the decryption identity is available on the machine.
 
