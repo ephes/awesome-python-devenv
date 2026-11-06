@@ -129,6 +129,24 @@ Use the current official installer:
 
 Homebrew is the base package manager for the rest of this machine setup.
 
+Before the first `brew install`, follow the installer's printed **Next steps**
+to load `brew shellenv` into the current shell. For example, in the temporary
+bootstrap `zsh` or `bash` session, use the prefix printed by the installer
+(`/opt/homebrew` on Apple Silicon; an Intel installation may use `/usr/local`):
+
+```sh
+brew_prefix="/opt/homebrew"
+eval "$("$brew_prefix/bin/brew" shellenv)"
+command -v brew
+brew --version
+```
+
+Confirm the readback resolves to the installation you just set up. These commands
+affect only the current session; repeat them if you open a new bootstrap shell.
+The persistent shell configuration comes from `chezmoi` later. Make persistent
+changes in its managed source rather than editing a home-directory dotfile during
+bootstrap. See Homebrew's [post-installation steps](https://docs.brew.sh/Installation#post-installation-steps).
+
 ## Set up SSH access before chezmoi
 
 If your dotfiles repo is private, set up SSH access before running `chezmoi init`.
@@ -187,19 +205,71 @@ Install `chezmoi` right after Homebrew:
 brew install chezmoi
 ```
 
-Then initialize and apply your managed dotfiles:
+Choose the path **before initializing** your dotfiles repository:
+
+- **Unencrypted repository:** follow [Dotfiles without encrypted files](#dotfiles-without-encrypted-files)
+  to initialize and apply in one command, then continue to
+  [Install packages and CLI tools](#install-packages-and-cli-tools).
+- **SOPS-encrypted repository:** follow the separate initialization and SOPS
+  steps below.
+
+For a SOPS-encrypted repository, initialize without applying yet. Replace the
+repository placeholder with your dotfiles repository:
 
 ```sh
-chezmoi init --apply <your-dotfiles-repo>
+chezmoi init <your-dotfiles-repo>
 ```
+
+For encrypted repositories, continue through the SOPS preparation, verification,
+inspection and apply steps below before installing the remaining packages.
 
 `chezmoi` is the source of truth for machine configuration in this setup. Prefer documenting what a config does and pointing to the managed source instead of copying large snippets into these docs.
 
 ## Configure SOPS before applying encrypted dotfiles
 
-If the dotfiles repo includes encrypted files, make sure the machine has the required SOPS decryption setup before running `chezmoi apply`.
+For a SOPS-encrypted dotfiles repository, install SOPS before applying anything:
 
-The exact key source, storage location, and decryption mechanism depend on how secrets are managed. The important point for bootstrap is simple: `chezmoi` can initialize the repo before SOPS is configured, but applying encrypted files requires the decryption identity to already exist on the machine.
+```sh
+brew install sops
+```
+
+Install any additional backend tools required by the repository (for example,
+`age` or GPG), then provision this machine's authorized decryption identity using
+the repository's secret-management procedure. The key source, storage location
+and backend configuration are repository-specific; initialization does not supply
+them. Do not rely on the later Brewfile step or encrypted dotfiles themselves to
+provide these prerequisites.
+
+Verify decryption using a SOPS-encrypted file in the initialized source directory.
+Replace `<encrypted-file>` with its relative path; discard plaintext output:
+
+```sh
+sops --decrypt "$(chezmoi source-path)/<encrypted-file>" > /dev/null
+```
+
+Continue only if decryption succeeds. Inspect the proposed changes locally, then
+apply them (the diff can contain decrypted secrets, so do not share its output):
+
+```sh
+chezmoi diff
+chezmoi apply
+```
+
+Resolve any inspection/rendering errors before applying. Keep configuration edits
+in the `chezmoi` source and deploy them with `chezmoi apply`.
+
+### Dotfiles without encrypted files
+
+Only when the repository has no encrypted files or decryption prerequisites may
+you use this shortcut **instead of** the separate initialization and SOPS steps:
+
+```sh
+chezmoi init --apply <your-dotfiles-repo>
+```
+
+The [`--apply` flag](https://www.chezmoi.io/reference/commands/init/#-a---apply)
+applies immediately after initialization, so it must not precede decryption setup
+for encrypted repositories.
 
 ## Install packages and CLI tools
 
