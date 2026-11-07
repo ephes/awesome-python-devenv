@@ -44,8 +44,11 @@ Run `python3 -B -m unittest discover -s tests -v` with Python 3.10+ and a POSIX
 `sh`; GitHub Actions runs the same checks. The bootstrap tests execute the
 documented Homebrew shell setup and encrypted/unencrypted chezmoi command order
 with synthetic tools, a restricted PATH and an isolated temporary home. They
-also check local links and anchors in the README and the two bootstrap pages.
-They never run installers, real decryption, or a real `chezmoi apply`.
+also check local links and anchors in the README, the two bootstrap pages and
+the Python guide. Offline Python-guide checks cover the example libraries'
+verified Python floors, metadata links and distinct lockfile policies; they do
+not fetch upstream updates. The checks never run installers, real decryption,
+or a real `chezmoi apply`.
 
 # Other Pages
 

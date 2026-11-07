@@ -143,8 +143,9 @@ class BootstrapDocsTests(unittest.TestCase):
         calls, _ = self.run_snippets(install + "\n" + snippets(unencrypted), encrypted=False)
         self.assertEqual(calls, ["brew install chezmoi", "chezmoi init --apply fixture-repo"])
 
-    def test_bootstrap_local_links_and_anchors(self):
-        for source in (ROOT / "README.md", ROOT / "docs/setup.md", MACHINE):
+    def test_local_links_and_anchors(self):
+        for source in (ROOT / "README.md", ROOT / "docs/setup.md", MACHINE,
+                       ROOT / "docs/python.md"):
             for url in re.findall(r"\[[^\]]+\]\(([^)]+)\)", source.read_text()):
                 parsed = urlsplit(url)
                 if parsed.scheme or parsed.netloc:

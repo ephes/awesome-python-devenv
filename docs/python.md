@@ -16,7 +16,12 @@ That is the whole workflow. Do not reintroduce `pyenv`, `pipx`, `virtualfish`, P
 uv python install 3.14
 ```
 
-`django-cast` currently declares `requires-python = ">=3.11"` and `django-indieweb` declares `requires-python = ">=3.10"` in `pyproject.toml`, so both projects fit naturally into the same `uv`-managed workflow.
+The example libraries' `develop` metadata was checked on 2026-11-07:
+
+- [django-cast](https://github.com/ephes/django-cast/blob/develop/pyproject.toml) declares `requires-python = ">=3.11"`.
+- [django-indieweb](https://github.com/ephes/django-indieweb/blob/develop/pyproject.toml) declares `requires-python = ">=3.11"`.
+
+These are package minimums, separate from this machine's preferred interpreter. Check the linked metadata and each repository's test matrix for the checkout you are using; these examples do not freeze upstream compatibility.
 
 For this machine, Python `3.14` is the current default interpreter to have available locally. `EDITOR` is `nvim`, and the Neovim Python host is managed separately through `chezmoi`. Treat that host interpreter as editor plumbing, not as a shared project environment.
 
@@ -29,7 +34,7 @@ That keeps Python tool installation in the same toolchain instead of splitting t
 
 ## Keep environments local to each project
 
-The expected project shape is a repository with a checked-in `pyproject.toml` and `uv.lock`, plus a local `.venv` created inside the repository.
+The expected project shape is a repository with a checked-in `pyproject.toml`, plus a local `.venv` created inside the repository. Whether `uv.lock` is committed follows the [repository's lockfile policy](#follow-the-repositorys-lockfile-policy).
 
 In normal use, you do not need to create the environment manually first. Run:
 
@@ -47,7 +52,7 @@ If you ever need an empty environment before syncing, `uv venv` is still availab
 
 `uv sync` is the baseline command after cloning a project, switching branches, or pulling dependency changes.
 
-It reads the dependency declarations from `pyproject.toml`, uses `uv.lock` as the resolved source of truth, and updates the local `.venv` to match.
+It reads the dependency declarations from `pyproject.toml`, creates or updates `uv.lock` as needed, and updates the local `.venv` to match. A repository may commit that resolution or keep it local; follow its own instructions after switching branches or changing metadata.
 
 That is why both example projects keep their `install` recipe extremely small:
 
@@ -74,7 +79,7 @@ This keeps the command bound to the project's local environment without requirin
 That command style shows up consistently in the real projects:
 
 - `django-cast` uses `uv run` for `pytest`, `coverage`, `mypy`, `ruff`, `pre-commit`, `tox`, Django management commands, documentation builds, and helper scripts.
-- `django-indieweb` uses `uv run` for `pytest`, `mypy`, `ruff`, documentation generation, and its local `beadsflow` helpers.
+- `django-indieweb` uses `uv run` for `pytest`, `mypy`, `ruff`, documentation generation, and `prek` hooks.
 
 If a command should be reproducible for everyone working on the project, it should usually run through `uv run` directly or through a `just` recipe that wraps `uv run`.
 
@@ -93,18 +98,22 @@ This is the replacement for older `pipx`-style guidance on this machine.
 
 Use `uv tool install` when you want a persistent command available across projects. Use `uvx` when you want to run a tool without adding it to a project or keeping a long-lived install around.
 
-## Keep uv.lock in version control
+## Follow the repository's lockfile policy
 
-`uv.lock` is part of the normal project state, not a disposable local artifact.
+For applications in this setup, commit `uv.lock` alongside `pyproject.toml` and update both when dependency metadata changes. The lockfile records the resolved dependency set so fresh clones and existing checkouts can use the same graph.
 
-The lockfile records the exact resolved dependency set that `uv sync` should install. That is what makes fresh clones, CI, and existing local checkouts converge on the same dependency graph.
+Libraries can choose a different policy. The two examples do not share one committed-lock convention (checked on 2026-11-07):
 
-The example projects both check in `uv.lock`, and both lockfiles also reflect their supported Python ranges:
+- `django-cast` does not track `uv.lock`: it tests several supported Django and Wagtail branches. Follow its [development environment and audit instructions](https://github.com/ephes/django-cast/blob/develop/docs/development.rst#setting-up-the-python-environment). In that checkout, resolve locally, then audit the runtime resolution including optional extras:
 
-- `django-cast` locks for `>=3.11` and includes resolution markers for multiple Python versions.
-- `django-indieweb` locks for `>=3.10` with its own marker set.
+```sh
+uv sync
+just audit-dependencies
+```
 
-When dependency metadata changes, update the lockfile in the same change. Do not edit the environment first and hope the metadata catches up later.
+- `django-indieweb` tracks [`uv.lock`](https://github.com/ephes/django-indieweb/blob/develop/uv.lock) for reproducible release dependency review, as described in its [development guide](https://github.com/ephes/django-indieweb/blob/develop/docs/development.rst#building-and-publishing-releases).
+
+Keep dependency declarations in `pyproject.toml`; follow each repository's resolution, audit, and lockfile-update instructions rather than changing its policy to match this machine guide.
 
 ## Use direnv for project variables, not for Python version management
 
@@ -115,7 +124,7 @@ The division of responsibility is simple:
 - `uv` manages Python interpreters, the local `.venv`, and Python command execution.
 - `direnv` loads project-specific environment variables when you enter the repository.
 
-Allow a project's `.envrc` once per checkout:
+If a project has an `.envrc`, inspect it and allow it once per checkout:
 
 ```sh
 direnv allow
@@ -123,10 +132,7 @@ direnv allow
 
 After that, the shell loads the file automatically when you `cd` into the project.
 
-The example repositories both use `.envrc`, but for project state rather than dependency management:
-
-- `django-cast` exports `SPECSYNC_WORKSPACE_ROOT`.
-- `django-indieweb` exports `BEADS_NO_DAEMON`, `BEADS_DIR`, `BEADSFLOW_CONFIG`, and related helper variables.
+For example, `django-indieweb` tracks an [`.envrc`](https://github.com/ephes/django-indieweb/blob/develop/.envrc) for `BEADS_NO_DAEMON`, `BEADS_DIR`, `BEADSFLOW_CONFIG`, and related helper variables. `django-cast` does not track an `.envrc`; a local one is optional.
 
 That is the pattern to keep. Use `.envrc` for environment variables, secrets wiring, and local helper configuration. Do not use it to replace `uv sync`, `uv run`, or the checked-in project metadata.
 
@@ -169,11 +175,9 @@ The practical rule is:
 
 The machine setup is not done when `uv` is installed. It is done when a real project works end to end.
 
-`django-cast` is the better primary verification target because it exercises more of the stack:
+`django-cast` is the better primary verification target because it exercises more of the stack. Complete its [development setup](https://github.com/ephes/django-cast/blob/develop/docs/development.rst) first, including JavaScript dependencies and the example database. From your existing `develop` checkout (allow `direnv` first if you have a local `.envrc`):
 
 ```sh
-cd ~/projects/django-cast
-direnv allow
 uv sync
 just check
 just dev
@@ -181,16 +185,15 @@ just dev
 
 That verifies several important things at once:
 
-- the shell loads project variables correctly
+- the shell loads project variables correctly, if configured
 - the project environment resolves and syncs cleanly
 - `ruff`, `mypy`, and `pytest` run through the local environment
 - the repository's normal task entry points work
 - the Django development server can start through the expected workflow
 
-For a smaller second check, `django-indieweb` should work with the same shape:
+For a smaller second check, from your existing `django-indieweb` `develop` checkout:
 
 ```sh
-cd ~/projects/django-indieweb
 direnv allow
 uv sync
 just check
@@ -208,6 +211,6 @@ The active Python workflow for this machine is straightforward:
 3. Run `uv sync` to create or update the local `.venv`.
 4. Use `uv run ...` for direct project commands.
 5. Use `just` as the standard task interface for the repository.
-6. Keep `pyproject.toml` and `uv.lock` in sync and under version control.
+6. Keep `pyproject.toml` under version control and follow the repository's lockfile policy.
 
 That is the current setup. If future docs or project templates contradict it, the docs or templates should be updated rather than reviving older tooling patterns.
